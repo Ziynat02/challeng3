@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+      padding: 20px 0px;
+    }
+    .container{
+      max-width: 100%;
+      display: flex;
+      margin: 0 auto;
+      border-radius: 24px;
+      box-shadow:10px 15px 75px rgb(145, 187, 241);
+    }
+    .left-part{
+      max-width: 100%;
+      color: #fff;
+      padding: 25px 35px 35px 35px;
+      background: linear-gradient(0deg, blue ,rgb(79, 79, 245) 90%);
+      border-radius: 10px;
+    }
+    .left-part h3{
+      font-size: 24px;
+      color: #beb8b8;
+      font-weight: 600;
+      text-align: center;
+      margin: 30px 0px;
+    }
+    .circle{
+      max-width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border-radius: 50%;
+      padding: 30px;
+      background: linear-gradient( rgb(23, 23, 236) ,rgb(79, 79, 248));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .circle h1{
+      font-size: 48px;
+    }
+    .left-part h2{
+      font-size: 30px;
+      max-width: 80px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .left-part p{
+      max-width:230px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #beb8b8;
+      text-align: center;
+    }
+    .circle p{
+       color: #beb8b8; 
+       max-width: 50px;
+       margin: 0 auto;
+    }
+    .right-part{
+      padding: 20px 20px;
+      margin-top: 30px;
+    }
+    .right-part h3{
+      font-size: 24px;
+      color: rgb(9, 9, 31);
+    }
+    .right-part .parts{
+      margin-top: 30px;
+    }
+    .right-part .parts .part{
+      display: flex;
+      padding: 10px;
+      margin-top: 13px;
+      
+      border-radius: 10px;
+    }
+    .right-part .parts .part i{
+      margin-right: 10px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .right-part .parts .part p{
+      margin-left: 90px;
+      color: #777;
+    }
+    .right-part .parts .part p span{
+      color: rgb(39, 39, 93);
+    }
+    .right-part .parts .part:nth-child(1){
+      border: 1px solid rgb(231, 139, 154);
+      color: rgb(231, 139, 154);
+      background: rgb(252, 196, 205);
+    }
+    .right-part .parts .part:nth-child(2){
+      border: 1px solid rgb(245, 245, 32);
+      color: rgb(245, 245, 32);
+      background: rgb(247, 247, 203);
+    }
+    .right-part .parts .part:nth-child(3){
+      border: 1px solid #3cf1b2;
+      color: #3cf1b2;
+      background: #bdf1ea;
+    }
+    .right-part .parts .part:nth-child(4){
+      border: 1px solid rgb(135, 135, 250);
+      color: rgb(135, 135, 249);
+      background: rgb(224, 224, 248);
+    }
+
+    
+    button{
+      padding: 15px 90px;
+      color: #fff;
+      margin-top: 50px;
+      background:rgb(16, 16, 63);
+      border: none;
+      border-radius: 53px;
+      font-size: 16px;
+    }
+    button:active{
+      background: linear-gradient( rgb(23, 23, 236) ,rgb(79, 79, 248));
+    }
+    @media (max-width:800px){
+      .container{
+      flex-wrap: wrap;
+    }
+    .left-part{
+      color: #fff;
+      padding: 25px 35px 35px 35px;
+      background: linear-gradient(0deg, blue ,rgb(79, 79, 245) 90%);
+      border-radius: 10px;
+    }
+    .left-part h3{
+      font-size: 24px;
+      color: #beb8b8;
+      font-weight: 600;
+      text-align: center;
+      margin: 30px 0px;
+    }
+    
+    .circle h1{
+      font-size: 48px;
+    }
+    .left-part h2{
+      font-size: 30px;
+      width: 80px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .left-part p{
+      width: 900px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #beb8b8;
+      text-align: center;
+    }
+    .circle p{ 
+       width: 50px;
+    }
+    .right-part{
+      padding: 20px 20px;
+    }
+    .right-part h3{
+      font-size: 24px;
+    }
+    .right-part .parts{
+      margin-top: 30px;
+    }
+    .right-part .parts .part{
+      display: flex;
+      padding: 10px;
+      margin-top: 13px;
+      width: 100%;
+    }
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="left-part">
+    <h3>Your Result</h3>
+    <div class="circle">
+      <h1>76</h1>
+      <p>of 100</p>
+    </div>
+  <h2>Great</h2>
+  <p>You scored higher than 65% of the people who have taken these tests.</p>
+  </div>  
+  <div class="right-part">
+    <h3>Summary</h3>
+    <div class="parts">
+      <div class="part">
+        <i class="fa-solid fa-bolt"></i>
+        <h4>Reaction</h4>
+        <p><span>80</span> / 100</p>
+      </div>
+      <div class="part">
+        <i class="fa-brands fa-nfc-directional"></i>
+        <h4>Memory</h4>
+        <p><span>92</span> / 100</p>
+      </div> 
+      <div class="part">
+        <i class="fa-regular fa-comment"></i>
+        <h4>Verbal</h4>
+        <p><span>61</span> / 100</p>
+      </div>
+      <div class="part">
+        <i class="fa-regular fa-eye"></i>
+        <h4> Visual</h4>
+        <p><span>72</span> / 100</p>
+      </div>
+   <button> Continue</button>
+    </div>
+  </div>
+</div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
